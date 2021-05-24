@@ -226,9 +226,9 @@ class Lane:
       255,255,255),2,cv2.LINE_AA)
 			
     if plot==True:      
-	image_show = cv2.cvtColor(image_copy, cv2.COLOR_BGR2RGB)
-	plt.imshow(image_show)
-	plt.show()
+      image_show = cv2.cvtColor(image_copy, cv2.COLOR_BGR2RGB)
+      plt.imshow(image_show)
+      plt.show()
       #cv2.imshow("Image with Curvature and Offset", image_copy)
 			
     return image_copy
@@ -700,9 +700,9 @@ class Lane:
 
     # Display the image
     while(1):
-	show_img = cv2.cvtColor(this_image, cv2.COLOR_BGR2RGB)
-	plt.imshow(show_img)
-	plt.show()
+      show_img = cv2.cvtColor(this_image, cv2.COLOR_BGR2RGB)
+      plt.imshow(show_img)
+      plt.show()
       #cv2.imshow('ROI Image', this_image)
 			
       # Press any key to stop
