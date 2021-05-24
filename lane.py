@@ -225,8 +225,11 @@ class Lane:
       0.5/600)*self.width)),(
       255,255,255),2,cv2.LINE_AA)
 			
-    if plot==True:       
-      cv2.imshow("Image with Curvature and Offset", image_copy)
+    if plot==True:      
+	image_show = cv2.cvtColor(image_copy, cv2.COLOR_BGR2RGB)
+	plt.imshow(image_show)
+	plt.show()
+      #cv2.imshow("Image with Curvature and Offset", image_copy)
 			
     return image_copy
     
@@ -666,7 +669,10 @@ class Lane:
 
       # Display the image
       while(1):
-        cv2.imshow('Warped Image', warped_plot)
+        show_img = cv2.cvtColor(warped_plot, cv2.COLOR_BGR2RGB)
+	plt.imshow(show_img)
+	plt.show()
+	#cv2.imshow('Warped Image', warped_plot)
 			
         # Press any key to stop
         if cv2.waitKey(0):
@@ -694,7 +700,10 @@ class Lane:
 
     # Display the image
     while(1):
-      cv2.imshow('ROI Image', this_image)
+	show_img = cv2.cvtColor(this_image, cv2.COLOR_BGR2RGB)
+	plt.imshow(show_img)
+	plt.show()
+      #cv2.imshow('ROI Image', this_image)
 			
       # Press any key to stop
       if cv2.waitKey(0):
@@ -766,13 +775,16 @@ def main():
 	
       # Display curvature and center offset on image
       frame_with_lane_lines2 = lane_obj.display_curvature_offset(
-        frame=frame_with_lane_lines, plot=False)
+        frame=frame_with_lane_lines, plot=True)
 				
       # Write the frame to the output video file
       result.write(frame_with_lane_lines2)
 			
       # Display the frame 
-      cv2.imshow("Frame", frame_with_lane_lines2) 	
+	show_img = cv2.cvtColor(frame_with_lane_lines2, cv2.COLOR_BGR2RGB)
+	plt.imshow(show_img)
+	plt.show()
+	#cv2.imshow("Frame", frame_with_lane_lines2) 	
 
       # Display frame for X milliseconds and check if q key is pressed
       # q == quit
