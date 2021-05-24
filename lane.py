@@ -8,12 +8,12 @@ import matplotlib.pyplot as plt # Used for plotting and error checking
 # Description: Implementation of the Lane class 
 
 # Make sure the video file is in the same directory as your code
-filename = '/mydrive/yolov4/Test_videos/Two_slow.mp4'
+filename = '/mydrive/yolov4/Test_videos/Driving_fast.mp4'
 file_size = (1280,720) # Assumes 1920x1080 mp4
 scale_ratio = 1 # Option to scale to fraction of original size. 
 
 # We want to save the output to a video file
-output_filename = '/mydrive/yolov4/Test_videos/orig_lane_detection_1_lanes.mp4'
+output_filename = '/mydrive/yolov4/Test_videos/orig_lane_detection_2_lanes.mp4'
 output_frames_per_second = 20.0 
 
 # Global variables
