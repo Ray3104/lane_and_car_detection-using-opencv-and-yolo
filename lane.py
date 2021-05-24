@@ -781,8 +781,8 @@ def main():
       result.write(frame_with_lane_lines2)
 			
       # Display the frame 
-      show_img = cv2.cvtColor(frame_with_lane_lines2, cv2.COLOR_BGR2RGB)
-      plt.imshow(show_img)
+      #show_img = cv2.cvtColor(frame_with_lane_lines2, cv2.COLOR_BGR2RGB)
+      plt.imshow(frame_with_lane_lines2)
       plt.show()
 	#cv2.imshow("Frame", frame_with_lane_lines2) 	
 
