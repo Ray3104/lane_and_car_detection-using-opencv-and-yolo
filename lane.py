@@ -762,7 +762,7 @@ def main():
 	
       # Find lane line pixels using the sliding window method 
       #left_fit, right_fit = lane_obj.get_lane_line_indices_sliding_windows(
-        plot=False)
+        #plot=False)
       left_fit, right_fit = lane_obj.get_lane_line_indices_sliding_windows(
         plot=True)
 
