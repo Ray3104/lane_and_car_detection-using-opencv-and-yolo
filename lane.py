@@ -764,10 +764,12 @@ def main():
         plot=False)
 
       # Fill in the lane line
-      lane_obj.get_lane_line_previous_window(left_fit, right_fit, plot=False)
+      #lane_obj.get_lane_line_previous_window(left_fit, right_fit, plot=False)
+      lane_obj.get_lane_line_previous_window(left_fit, right_fit, plot=True)
 	
       # Overlay lines on the original frame
-      frame_with_lane_lines = lane_obj.overlay_lane_lines(plot=False)
+      #frame_with_lane_lines = lane_obj.overlay_lane_lines(plot=False)
+      frame_with_lane_lines = lane_obj.overlay_lane_lines(plot=True)
 
       # Calculate lane line curvature (left and right lane lines)
       lane_obj.calculate_curvature(print_to_terminal=False)
