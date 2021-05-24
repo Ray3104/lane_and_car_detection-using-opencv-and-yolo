@@ -553,7 +553,8 @@ class Lane:
     # White in the regions with the purest hue colors (e.g. >130...play with
     # this value for best results).
     s_channel = hls[:, :, 2] # use only the saturation channel data
-    _, s_binary = edge.threshold(s_channel, (130, 255))
+    #_, s_binary = edge.threshold(s_channel, (130, 255))
+    _, s_binary = edge.threshold(s_channel, (80, 255))
 	
     # Perform binary thresholding on the R (red) channel of the 
 		# original BGR video frame. 
