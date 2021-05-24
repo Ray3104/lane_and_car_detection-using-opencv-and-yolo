@@ -670,8 +670,8 @@ class Lane:
       # Display the image
       while(1):
         show_img = cv2.cvtColor(warped_plot, cv2.COLOR_BGR2RGB)
-	plt.imshow(show_img)
-	plt.show()
+        plt.imshow(show_img)
+        plt.show()
 	#cv2.imshow('Warped Image', warped_plot)
 			
         # Press any key to stop
