@@ -555,7 +555,7 @@ class Lane:
     s_channel = hls[:, :, 2] # use only the saturation channel data
     #_, s_binary = edge.threshold(s_channel, (130, 255))
     #_, s_binary = edge.threshold(s_channel, (80, 255))
-    _, s_binary = edge.threshold(s_channel, (80, 255))
+    _, s_binary = edge.threshold(s_channel, (50, 255))
 	
     # Perform binary thresholding on the R (red) channel of the 
 		# original BGR video frame. 
