@@ -749,11 +749,13 @@ def main():
       lane_line_markings = lane_obj.get_line_markings()
 
       # Plot the region of interest on the image
-      lane_obj.plot_roi(plot=False)
+      #lane_obj.plot_roi(plot=False)
+      lane_obj.plot_roi(plot=True)
 
       # Perform the perspective transform to generate a bird's eye view
       # If Plot == True, show image with new region of interest
-      warped_frame = lane_obj.perspective_transform(plot=False)
+      #warped_frame = lane_obj.perspective_transform(plot=False)
+      warped_frame = lane_obj.perspective_transform(plot=True)
 
       # Generate the image histogram to serve as a starting point
       # for finding lane line pixels
