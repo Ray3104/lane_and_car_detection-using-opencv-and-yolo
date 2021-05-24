@@ -757,11 +757,14 @@ def main():
 
       # Generate the image histogram to serve as a starting point
       # for finding lane line pixels
-      histogram = lane_obj.calculate_histogram(plot=False)	
+      #histogram = lane_obj.calculate_histogram(plot=False)
+      histogram = lane_obj.calculate_histogram(plot=True)
 	
       # Find lane line pixels using the sliding window method 
-      left_fit, right_fit = lane_obj.get_lane_line_indices_sliding_windows(
+      #left_fit, right_fit = lane_obj.get_lane_line_indices_sliding_windows(
         plot=False)
+      left_fit, right_fit = lane_obj.get_lane_line_indices_sliding_windows(
+        plot=True)
 
       # Fill in the lane line
       #lane_obj.get_lane_line_previous_window(left_fit, right_fit, plot=False)
