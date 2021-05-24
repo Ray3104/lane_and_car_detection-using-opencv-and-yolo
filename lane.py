@@ -295,7 +295,7 @@ class Lane:
     prev_right_fit2.append(right_fit)
 
     # Calculate the moving average	
-    if len(prev_left_fit2) > 5:
+    if len(prev_left_fit2) > 25:
       prev_left_fit2.pop(0)
       prev_right_fit2.pop(0)
       left_fit = sum(prev_left_fit2) / len(prev_left_fit2)
@@ -555,7 +555,7 @@ class Lane:
     s_channel = hls[:, :, 2] # use only the saturation channel data
     #_, s_binary = edge.threshold(s_channel, (130, 255))
     #_, s_binary = edge.threshold(s_channel, (80, 255))
-    _, s_binary = edge.threshold(s_channel, (50, 255))
+    _, s_binary = edge.threshold(s_channel, (80, 255))
 	
     # Perform binary thresholding on the R (red) channel of the 
 		# original BGR video frame. 
