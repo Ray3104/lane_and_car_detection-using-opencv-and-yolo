@@ -295,7 +295,7 @@ class Lane:
     prev_right_fit2.append(right_fit)
 
     # Calculate the moving average	
-    if len(prev_left_fit2) > 10:
+    if len(prev_left_fit2) > 5:
       prev_left_fit2.pop(0)
       prev_right_fit2.pop(0)
       left_fit = sum(prev_left_fit2) / len(prev_left_fit2)
