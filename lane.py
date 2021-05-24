@@ -295,7 +295,7 @@ class Lane:
     prev_right_fit2.append(right_fit)
 
     # Calculate the moving average	
-    if len(prev_left_fit2) > 2:
+    if len(prev_left_fit2) > 1:
       prev_left_fit2.pop(0)
       prev_right_fit2.pop(0)
       left_fit = sum(prev_left_fit2) / len(prev_left_fit2)
@@ -555,7 +555,7 @@ class Lane:
     s_channel = hls[:, :, 2] # use only the saturation channel data
     #_, s_binary = edge.threshold(s_channel, (130, 255))
     #_, s_binary = edge.threshold(s_channel, (80, 255))
-    _, s_binary = edge.threshold(s_channel, (2, 255))
+    _, s_binary = edge.threshold(s_channel, (1, 255))
 	
     # Perform binary thresholding on the R (red) channel of the 
 		# original BGR video frame. 
@@ -754,19 +754,17 @@ def main():
 
       # Perform the perspective transform to generate a bird's eye view
       # If Plot == True, show image with new region of interest
-      #warped_frame = lane_obj.perspective_transform(plot=False)
-      warped_frame = lane_obj.perspective_transform(plot=True)
-
+      warped_frame = lane_obj.perspective_transform(plot=False)
+     
       # Generate the image histogram to serve as a starting point
       # for finding lane line pixels
       #histogram = lane_obj.calculate_histogram(plot=False)
       histogram = lane_obj.calculate_histogram(plot=True)
 	
       # Find lane line pixels using the sliding window method 
-      #left_fit, right_fit = lane_obj.get_lane_line_indices_sliding_windows(
-        #plot=False)
       left_fit, right_fit = lane_obj.get_lane_line_indices_sliding_windows(
-        plot=True)
+        plot=False)
+
 
       # Fill in the lane line
       #lane_obj.get_lane_line_previous_window(left_fit, right_fit, plot=False)
@@ -777,7 +775,8 @@ def main():
       frame_with_lane_lines = lane_obj.overlay_lane_lines(plot=True)
 
       # Calculate lane line curvature (left and right lane lines)
-      lane_obj.calculate_curvature(print_to_terminal=False)
+      #lane_obj.calculate_curvature(print_to_terminal=False)
+      lane_obj.calculate_curvature(print_to_terminal=True)
 
       # Calculate center offset  																
       lane_obj.calculate_car_position(print_to_terminal=False)
